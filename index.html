@@ -169,7 +169,7 @@ let questions = [
         
         displayQuestion()  
       }
-      console.log(parseInt(numberOfQuestions))
+      //console.log(parseInt(numberOfQuestions))
 
       const displayQuestion = function () {     
         const div1 = document.querySelector("div")          
@@ -192,13 +192,13 @@ let questions = [
                 q.push(number);
             }
         }
-        console.log(q)
+        //console.log(q)
 
         div1.innerHTML = `<h1>QUIZ GAME!</h1>
             <h3>Question ${questionNumber+1}</h3>
             <h4>${questions[q[questionNumber]].question}</h4>`
 
-      /*   for(i=0; i< parseInt(numberOfQuestions); i++) {    */      
+         
         const a = [] 
 
          a.push(questions[q[questionNumber]].correct_answer)          
@@ -210,25 +210,20 @@ let questions = [
             const c = Math.floor(Math.random() * (l + 1));
             [a[l], a[c]] = [a[c], a[l]];
           } 
-          console.log(a)
+          //console.log(a)
  
-
             for (k=0; k<a.length;k++) {              
 
               div1.innerHTML += `
               <div>               
                 <input type="radio" name="quiz" value=${a[k]}>
                 <label for=${a[k]}>${a[k]}</label>
-              </div>              
-            `
+              </div>`
             }
            
             div1.innerHTML += 
             `<button id="nextquestion" onclick="checkScore()">Next question</button>` 
             
-            
-         /* } */ 
-          
         }
 
         const checkScore = function () {
@@ -241,9 +236,8 @@ let questions = [
               }
             }
 
-          if (checkedAnswer === questions[q[questionNumber]].correct_answer)                        
-              {
-                score += 1 
+          if (checkedAnswer === questions[q[questionNumber]].correct_answer) {
+              score += 1 
               questionNumber +=1
               alert("Correct answer, Your score is: " + score)
               displayQuestion()
@@ -255,8 +249,7 @@ let questions = [
               displayQuestion()
             }
           }
-            
-        
+                    
 
     </script>
     
